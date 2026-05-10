@@ -4,6 +4,9 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import BellaFleur from './pages/portfolio/BellaFleur';
+import StudioArchi from './pages/portfolio/StudioArchi';
+import NutriCoach from './pages/portfolio/NutriCoach';
 
 export default function App() {
   return (
@@ -15,6 +18,9 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="/portfolio/bella-fleur" element={<BellaFleur />} />
+        <Route path="/portfolio/studio-archi" element={<StudioArchi />} />
+        <Route path="/portfolio/nutricoach" element={<NutriCoach />} />
       </Routes>
     </BrowserRouter>
   );

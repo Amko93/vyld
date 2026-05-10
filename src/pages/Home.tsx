@@ -11,48 +11,46 @@ const projects = [
     title: 'Soparimex',
     category: 'Site vitrine · Industrie',
     url: 'soparimex.com',
+    externalUrl: 'https://soparimex.com',
     screenshot: 'https://image.thum.io/get/width/800/crop/600/https://soparimex.com',
     gradient: '',
   },
   {
     title: 'Bella Fleur',
     category: 'E-commerce · Fleuriste',
-    gradient: 'bg-gradient-to-br from-pink-500/30 to-rose-600/30',
+    internalUrl: '/portfolio/bella-fleur',
+    gradient: 'bg-gradient-to-br from-pink-500 to-rose-600',
     mockupContent: (
       <div className="text-center px-6">
-        <div className="w-10 h-10 rounded-full bg-pink-400/30 mx-auto mb-3 flex items-center justify-center">
-          <span className="text-xl">🌸</span>
-        </div>
+        <div className="w-12 h-12 rounded-full bg-white/20 mx-auto mb-3 flex items-center justify-center text-2xl">🌸</div>
         <p className="text-white font-bold text-sm">Bella Fleur</p>
-        <p className="text-white/50 text-xs mt-1">Boutique en ligne</p>
+        <p className="text-white/60 text-xs mt-1">Boutique en ligne</p>
       </div>
     ),
   },
   {
     title: 'Studio Archi',
-    category: 'Site vitrine · Architecture',
-    gradient: 'bg-gradient-to-br from-slate-600/40 to-blue-800/40',
+    category: 'Portfolio · Architecture',
+    internalUrl: '/portfolio/studio-archi',
+    gradient: 'bg-gradient-to-br from-slate-700 to-slate-900',
     mockupContent: (
       <div className="text-center px-6">
-        <div className="w-10 h-10 rounded-full bg-blue-400/20 mx-auto mb-3 flex items-center justify-center">
-          <span className="text-xl">🏛️</span>
-        </div>
+        <div className="w-12 h-12 rounded-full bg-white/10 mx-auto mb-3 flex items-center justify-center text-2xl">🏛️</div>
         <p className="text-white font-bold text-sm">Studio Archi</p>
-        <p className="text-white/50 text-xs mt-1">Portfolio & projets</p>
+        <p className="text-white/60 text-xs mt-1">Portfolio & projets</p>
       </div>
     ),
   },
   {
     title: 'NutriCoach',
-    category: 'Site vitrine · Santé & Bien-être',
-    gradient: 'bg-gradient-to-br from-emerald-500/30 to-teal-700/30',
+    category: 'Site vitrine · Bien-être',
+    internalUrl: '/portfolio/nutricoach',
+    gradient: 'bg-gradient-to-br from-emerald-500 to-green-700',
     mockupContent: (
       <div className="text-center px-6">
-        <div className="w-10 h-10 rounded-full bg-emerald-400/20 mx-auto mb-3 flex items-center justify-center">
-          <span className="text-xl">🥗</span>
-        </div>
+        <div className="w-12 h-12 rounded-full bg-white/20 mx-auto mb-3 flex items-center justify-center text-2xl">🥗</div>
         <p className="text-white font-bold text-sm">NutriCoach</p>
-        <p className="text-white/50 text-xs mt-1">Coaching nutrition</p>
+        <p className="text-white/60 text-xs mt-1">Coaching nutrition</p>
       </div>
     ),
   },
@@ -132,13 +130,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14 animate-fade-in-up">
             <p className="text-vyld-violet text-xs tracking-[0.25em] uppercase mb-4">
-              Réalisations
+              Réalisations & exemples
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Nos derniers <GradientText>projets</GradientText>
+              Des sites <GradientText>comme le vôtre</GradientText>
             </h2>
             <p className="text-gray-400">
-              Des sites pensés pour convertir et impressionner
+              Exemples de projets réalisables — cliquez pour voir le rendu
             </p>
           </div>
 
