@@ -19,40 +19,22 @@ const projects = [
     title: 'Bella Fleur',
     category: 'E-commerce · Fleuriste',
     internalUrl: '/portfolio/bella-fleur',
-    gradient: 'bg-gradient-to-br from-pink-500 to-rose-600',
-    mockupContent: (
-      <div className="text-center px-6">
-        <div className="w-12 h-12 rounded-full bg-white/20 mx-auto mb-3 flex items-center justify-center text-2xl">🌸</div>
-        <p className="text-white font-bold text-sm">Bella Fleur</p>
-        <p className="text-white/60 text-xs mt-1">Boutique en ligne</p>
-      </div>
-    ),
+    screenshot: 'https://images.unsplash.com/photo-1487530811015-780f69e03e26?w=800&q=80&auto=format&fit=crop',
+    gradient: '',
   },
   {
     title: 'Studio Archi',
     category: 'Portfolio · Architecture',
     internalUrl: '/portfolio/studio-archi',
-    gradient: 'bg-gradient-to-br from-slate-700 to-slate-900',
-    mockupContent: (
-      <div className="text-center px-6">
-        <div className="w-12 h-12 rounded-full bg-white/10 mx-auto mb-3 flex items-center justify-center text-2xl">🏛️</div>
-        <p className="text-white font-bold text-sm">Studio Archi</p>
-        <p className="text-white/60 text-xs mt-1">Portfolio & projets</p>
-      </div>
-    ),
+    screenshot: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80&auto=format&fit=crop',
+    gradient: '',
   },
   {
     title: 'NutriCoach',
     category: 'Site vitrine · Bien-être',
     internalUrl: '/portfolio/nutricoach',
-    gradient: 'bg-gradient-to-br from-emerald-500 to-green-700',
-    mockupContent: (
-      <div className="text-center px-6">
-        <div className="w-12 h-12 rounded-full bg-white/20 mx-auto mb-3 flex items-center justify-center text-2xl">🥗</div>
-        <p className="text-white font-bold text-sm">NutriCoach</p>
-        <p className="text-white/60 text-xs mt-1">Coaching nutrition</p>
-      </div>
-    ),
+    screenshot: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    gradient: '',
   },
 ];
 
