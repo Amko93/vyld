@@ -17,12 +17,12 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: 'Bouquet Romantique', price: 45, emoji: '💐', tag: 'Bestseller', category: 'Bouquets', img: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80&auto=format&fit=crop', desc: 'Un bouquet généreux de pivoines, roses et renoncules dans des tons roses et bordeaux. Livré avec ruban satiné et carte personnalisée.' },
-  { id: 2, name: 'Roses Premium', price: 65, oldPrice: 80, emoji: '🌹', tag: 'Promo', category: 'Roses', img: 'https://images.unsplash.com/photo-1548460600-dc41932c5d67?w=600&q=80&auto=format&fit=crop', desc: 'Une sélection de 12 roses longues tiges de variété Éden. Symbole d\'élégance, idéal pour les grandes occasions.' },
-  { id: 3, name: 'Composition Printanière', price: 38, emoji: '🌸', category: 'Compositions', img: 'https://images.unsplash.com/photo-1490750967868-88df5691cc9c?w=600&q=80&auto=format&fit=crop', desc: 'Un mélange coloré de fleurs de saison : tulipes, jonquilles et marguerites. Parfait pour égayer une pièce.' },
-  { id: 4, name: 'Bouquet Mariée', price: 120, emoji: '🤍', tag: 'Sur commande', category: 'Mariage', img: 'https://images.unsplash.com/photo-1522413452208-996ff3f3e740?w=600&q=80&auto=format&fit=crop', desc: 'Bouquet de mariée sur mesure en pivoines blanches et eucalyptus. Consultation offerte pour adapter au thème de votre mariage.' },
-  { id: 5, name: 'Plante Tropicale', price: 29, emoji: '🌿', category: 'Plantes', img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&q=80&auto=format&fit=crop', desc: 'Monstera deliciosa dans un cache-pot en céramique beige. Facile d\'entretien, idéale pour la maison ou le bureau.' },
-  { id: 6, name: 'Orchidée Blanche', price: 55, emoji: '🌺', tag: 'Premium', category: 'Orchidées', img: 'https://images.unsplash.com/photo-1566748485136-3bdd278fa7a6?w=600&q=80&auto=format&fit=crop', desc: 'Orchidée Phalaenopsis blanche à 2 tiges en pot céramique noir mat. Fleurit jusqu\'à 3 mois avec peu d\'entretien.' },
+  { id: 1, name: 'Bouquet Romantique', price: 45, emoji: '💐', tag: 'Bestseller', category: 'Bouquets', img: 'https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop', desc: 'Un bouquet généreux de pivoines, roses et renoncules dans des tons roses et bordeaux. Livré avec ruban satiné et carte personnalisée.' },
+  { id: 2, name: 'Roses Premium', price: 65, oldPrice: 80, emoji: '🌹', tag: 'Promo', category: 'Roses', img: 'https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop', desc: 'Une sélection de 12 roses longues tiges de variété Éden. Symbole d\'élégance, idéal pour les grandes occasions.' },
+  { id: 3, name: 'Composition Printanière', price: 38, emoji: '🌸', category: 'Compositions', img: 'https://images.pexels.com/photos/1062315/pexels-photo-1062315.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop', desc: 'Un mélange coloré de fleurs de saison : tulipes, jonquilles et marguerites. Parfait pour égayer une pièce.' },
+  { id: 4, name: 'Bouquet Mariée', price: 120, emoji: '🤍', tag: 'Sur commande', category: 'Mariage', img: 'https://images.pexels.com/photos/1251175/pexels-photo-1251175.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop', desc: 'Bouquet de mariée sur mesure en pivoines blanches et eucalyptus. Consultation offerte pour adapter au thème de votre mariage.' },
+  { id: 5, name: 'Plante Tropicale', price: 29, emoji: '🌿', category: 'Plantes', img: 'https://images.pexels.com/photos/1029844/pexels-photo-1029844.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop', desc: 'Monstera deliciosa dans un cache-pot en céramique beige. Facile d\'entretien, idéale pour la maison ou le bureau.' },
+  { id: 6, name: 'Orchidée Blanche', price: 55, emoji: '🌺', tag: 'Premium', category: 'Orchidées', img: 'https://images.pexels.com/photos/1006103/pexels-photo-1006103.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop', desc: 'Orchidée Phalaenopsis blanche à 2 tiges en pot céramique noir mat. Fleurit jusqu\'à 3 mois avec peu d\'entretien.' },
 ];
 
 const testimonials = [
@@ -168,7 +168,7 @@ export default function BellaFleur() {
         <>
           <section className="relative h-[85vh] flex items-end overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1487530811015-780f69e03e26?w=1600&q=80&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
               alt="Bella Fleur"
               className="absolute inset-0 w-full h-full object-cover"
             />
