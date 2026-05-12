@@ -10,19 +10,19 @@ interface Product {
   price: number;
   oldPrice?: number;
   emoji: string;
+  img: string;
   tag?: string;
   category: string;
   desc: string;
-  colors: string;
 }
 
 const products: Product[] = [
-  { id: 1, name: 'Bouquet Romantique', price: 45, emoji: '💐', tag: 'Bestseller', category: 'Bouquets', desc: 'Un bouquet généreux de pivoines, roses et renoncules dans des tons roses et bordeaux. Livré avec ruban satiné et carte personnalisée.', colors: 'from-pink-300 to-rose-400' },
-  { id: 2, name: 'Roses Premium', price: 65, oldPrice: 80, emoji: '🌹', tag: 'Promo', category: 'Roses', desc: 'Une sélection de 12 roses longues tiges de variété Éden. Symbole d\'élégance, idéal pour les grandes occasions.', colors: 'from-red-400 to-rose-600' },
-  { id: 3, name: 'Composition Printanière', price: 38, emoji: '🌸', category: 'Compositions', desc: 'Un mélange coloré de fleurs de saison : tulipes, jonquilles et marguerites. Parfait pour égayer une pièce.', colors: 'from-yellow-300 to-orange-400' },
-  { id: 4, name: 'Bouquet Mariée', price: 120, emoji: '🤍', tag: 'Sur commande', category: 'Mariage', desc: 'Bouquet de mariée sur mesure en pivoines blanches et eucalyptus. Consultation offerte pour adapter au thème de votre mariage.', colors: 'from-gray-100 to-gray-300' },
-  { id: 5, name: 'Plante Tropicale', price: 29, emoji: '🌿', category: 'Plantes', desc: 'Monstera deliciosa dans un cache-pot en céramique beige. Facile d\'entretien, idéale pour la maison ou le bureau.', colors: 'from-green-400 to-emerald-600' },
-  { id: 6, name: 'Orchidée Blanche', price: 55, emoji: '🌺', tag: 'Premium', category: 'Orchidées', desc: 'Orchidée Phalaenopsis blanche à 2 tiges en pot céramique noir mat. Fleurit jusqu\'à 3 mois avec peu d\'entretien.', colors: 'from-purple-200 to-pink-300' },
+  { id: 1, name: 'Bouquet Romantique', price: 45, emoji: '💐', tag: 'Bestseller', category: 'Bouquets', img: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80&auto=format&fit=crop', desc: 'Un bouquet généreux de pivoines, roses et renoncules dans des tons roses et bordeaux. Livré avec ruban satiné et carte personnalisée.' },
+  { id: 2, name: 'Roses Premium', price: 65, oldPrice: 80, emoji: '🌹', tag: 'Promo', category: 'Roses', img: 'https://images.unsplash.com/photo-1548460600-dc41932c5d67?w=600&q=80&auto=format&fit=crop', desc: 'Une sélection de 12 roses longues tiges de variété Éden. Symbole d\'élégance, idéal pour les grandes occasions.' },
+  { id: 3, name: 'Composition Printanière', price: 38, emoji: '🌸', category: 'Compositions', img: 'https://images.unsplash.com/photo-1490750967868-88df5691cc9c?w=600&q=80&auto=format&fit=crop', desc: 'Un mélange coloré de fleurs de saison : tulipes, jonquilles et marguerites. Parfait pour égayer une pièce.' },
+  { id: 4, name: 'Bouquet Mariée', price: 120, emoji: '🤍', tag: 'Sur commande', category: 'Mariage', img: 'https://images.unsplash.com/photo-1522413452208-996ff3f3e740?w=600&q=80&auto=format&fit=crop', desc: 'Bouquet de mariée sur mesure en pivoines blanches et eucalyptus. Consultation offerte pour adapter au thème de votre mariage.' },
+  { id: 5, name: 'Plante Tropicale', price: 29, emoji: '🌿', category: 'Plantes', img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&q=80&auto=format&fit=crop', desc: 'Monstera deliciosa dans un cache-pot en céramique beige. Facile d\'entretien, idéale pour la maison ou le bureau.' },
+  { id: 6, name: 'Orchidée Blanche', price: 55, emoji: '🌺', tag: 'Premium', category: 'Orchidées', img: 'https://images.unsplash.com/photo-1566748485136-3bdd278fa7a6?w=600&q=80&auto=format&fit=crop', desc: 'Orchidée Phalaenopsis blanche à 2 tiges en pot céramique noir mat. Fleurit jusqu\'à 3 mois avec peu d\'entretien.' },
 ];
 
 const testimonials = [
@@ -112,7 +112,7 @@ export default function BellaFleur() {
             </div>
           ) : cart.map(({ product, qty }) => (
             <div key={product.id} className="flex items-center gap-4 p-3 bg-pink-50 rounded-xl">
-              <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${product.colors} flex items-center justify-center text-xl shrink-0`}>{product.emoji}</div>
+              <img src={product.img} alt={product.name} className="w-12 h-12 rounded-lg object-cover shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="font-medium text-sm text-[#2d1b1b] truncate">{product.name}</p>
                 <p className="text-pink-600 text-sm font-bold">{product.price * qty}€</p>
@@ -166,41 +166,38 @@ export default function BellaFleur() {
       {/* ACCUEIL */}
       {page === 'accueil' && (
         <>
-          <section className="bg-gradient-to-br from-pink-50 via-rose-50 to-white py-20 px-6">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-block bg-pink-100 text-pink-600 text-xs font-semibold px-3 py-1 rounded-full mb-6">🚚 Livraison Paris & IDF sous 24h</span>
-                <h1 className="text-5xl md:text-6xl font-bold text-[#2d1b1b] leading-tight mb-6">
-                  Des fleurs qui<br /><span className="text-pink-600">vous ressemblent</span>
-                </h1>
-                <p className="text-gray-500 text-lg mb-8 leading-relaxed">Bouquets artisanaux, compositions sur mesure et abonnements floraux. Chaque création est unique, comme vous.</p>
-                <div className="flex flex-wrap gap-4">
-                  <button onClick={() => goTo('boutique')} className="flex items-center gap-2 px-8 py-3.5 bg-pink-600 text-white rounded-full font-medium hover:bg-pink-700 transition-colors">
-                    Voir la boutique <ArrowRight size={16} />
-                  </button>
-                  <button onClick={() => goTo('contact')} className="px-8 py-3.5 border border-pink-300 text-pink-700 rounded-full font-medium hover:bg-pink-50 transition-colors">
-                    Commande sur mesure
-                  </button>
-                </div>
-                <div className="flex items-center gap-6 mt-10">
-                  {[['500+', 'Clients'], ['24h', 'Livraison'], ['100%', 'Frais']].map(([v, l]) => (
-                    <div key={l} className="text-center">
-                      <p className="font-bold text-xl text-pink-700">{v}</p>
-                      <p className="text-xs text-gray-400">{l}</p>
-                    </div>
-                  ))}
-                </div>
+          <section className="relative h-[85vh] flex items-end overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1487530811015-780f69e03e26?w=1600&q=80&auto=format&fit=crop"
+              alt="Bella Fleur"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2d1b1b] via-[#2d1b1b]/40 to-transparent" />
+            <div className="relative max-w-6xl mx-auto px-6 pb-16 w-full">
+              <span className="inline-block bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full mb-6 border border-white/20">🚚 Livraison Paris & IDF sous 24h</span>
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                Des fleurs qui<br /><span className="text-pink-300">vous ressemblent</span>
+              </h1>
+              <p className="text-white/70 text-lg mb-8 max-w-lg leading-relaxed">Bouquets artisanaux, compositions sur mesure et abonnements floraux.</p>
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => goTo('boutique')} className="flex items-center gap-2 px-8 py-3.5 bg-pink-600 text-white rounded-full font-medium hover:bg-pink-700 transition-colors">
+                  Voir la boutique <ArrowRight size={16} />
+                </button>
+                <button onClick={() => goTo('contact')} className="px-8 py-3.5 border border-white/40 text-white rounded-full font-medium hover:bg-white/10 transition-colors">
+                  Commande sur mesure
+                </button>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {products.slice(0, 4).map(p => (
-                  <button key={p.id} onClick={() => openProduct(p)}
-                    className={`rounded-2xl bg-gradient-to-br ${p.colors} aspect-square flex flex-col items-center justify-center hover:scale-105 transition-transform cursor-pointer shadow-sm`}>
-                    <span className="text-4xl mb-2">{p.emoji}</span>
-                    <span className="text-white font-semibold text-sm px-2 text-center">{p.name}</span>
-                    <span className="text-white/80 text-xs mt-1">{p.price}€</span>
-                  </button>
-                ))}
-              </div>
+            </div>
+          </section>
+
+          <section className="py-10 px-6 bg-white border-b border-pink-100">
+            <div className="max-w-6xl mx-auto grid grid-cols-3 divide-x divide-pink-100 text-center">
+              {[['500+', 'Clients satisfaits'], ['24h', 'Délai de livraison'], ['100%', 'Fleurs fraîches']].map(([v, l]) => (
+                <div key={l} className="px-6">
+                  <p className="font-bold text-2xl text-pink-700">{v}</p>
+                  <p className="text-xs text-gray-400 mt-1">{l}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -228,8 +225,8 @@ export default function BellaFleur() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {products.slice(0, 3).map(p => (
                   <div key={p.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-pink-100 hover:-translate-y-1 transition-transform">
-                    <div className={`bg-gradient-to-br ${p.colors} aspect-[4/3] flex items-center justify-center relative`}>
-                      <span className="text-7xl">{p.emoji}</span>
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <img src={p.img} alt={p.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                       {p.tag && <span className="absolute top-3 left-3 bg-white text-pink-600 text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</span>}
                       <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-pink-400 hover:text-pink-600"><Heart size={14} /></button>
                     </div>
@@ -302,8 +299,8 @@ export default function BellaFleur() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map(p => (
                 <div key={p.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-pink-100 hover:-translate-y-1 transition-transform">
-                  <div className={`bg-gradient-to-br ${p.colors} aspect-[4/3] flex items-center justify-center relative cursor-pointer`} onClick={() => openProduct(p)}>
-                    <span className="text-7xl">{p.emoji}</span>
+                  <div className="aspect-[4/3] relative overflow-hidden cursor-pointer" onClick={() => openProduct(p)}>
+                    <img src={p.img} alt={p.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                     {p.tag && <span className="absolute top-3 left-3 bg-white text-pink-600 text-xs font-semibold px-2.5 py-1 rounded-full">{p.tag}</span>}
                     <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-pink-400 hover:text-pink-600"><Heart size={14} /></button>
                   </div>
@@ -336,8 +333,8 @@ export default function BellaFleur() {
               <ArrowLeft size={16} /> Retour à la boutique
             </button>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              <div className={`bg-gradient-to-br ${selectedProduct.colors} rounded-3xl aspect-square flex items-center justify-center text-[120px]`}>
-                {selectedProduct.emoji}
+              <div className="rounded-3xl overflow-hidden aspect-square">
+                <img src={selectedProduct.img} alt={selectedProduct.name} className="w-full h-full object-cover" />
               </div>
               <div>
                 {selectedProduct.tag && <span className="inline-block bg-pink-100 text-pink-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">{selectedProduct.tag}</span>}
